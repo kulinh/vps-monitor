@@ -7,11 +7,12 @@ import (
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 )
-
+var (
+    botToken = os.Getenv("BOT_TOKEN")
+    chatID, _ = strconv.ParseInt(os.Getenv("CHAT_ID"), 10, 64)
+)
 const (
-	botToken      = "YOUR_BOT_TOKEN"
-	chatID        = YOUR_CHAT_ID
-	checkInterval = 5 * time.Minute
+	checkInterval = 3 * time.Minute
 )
 
 type Server struct {
